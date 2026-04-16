@@ -7,68 +7,108 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B56342145E640EABED1D68B /* NurseryConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F910A42E0894E828039E98E /* NurseryConnectApp.swift */; };
-		8D21060FBA134B28BDD8AB5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5AF795D514599B7CA9174 /* ContentView.swift */; };
-		77088558EC1847659BB62E94 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9F76F8E934771BB2E19ED /* Child.swift */; };
-		27EC0CB0AD7041A894FA1B2F /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614404505CE54E9694DAC8C3 /* DiaryEntry.swift */; };
-		E722F06876364F84A7CFBA32 /* IncidentReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E235133B1A744D7BDC247F0 /* IncidentReport.swift */; };
-		F993E2B7EB334A74928AF299 /* NurseryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A892128C94CF4D7A94920BC4 /* NurseryTheme.swift */; };
-		99C8455A8FEB466D9CC67185 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDBF95BC1A84B58B7B95048 /* SampleData.swift */; };
-		86572A05F3E042DA9ACDD284 /* NurseryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D5DBC287642F9AB60ADFD /* NurseryCard.swift */; };
-		13CC1D9AAC2745A0BE20B54D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D528D1BE19D647E0A87767AD /* DashboardView.swift */; };
-		239BF378788946398C0FF2B2 /* ChildCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7E875253E94146BB2F7338 /* ChildCardView.swift */; };
-		6A31FD50C110479D908EBC4B /* ChildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F783B0E0D41A79AE75497 /* ChildDetailView.swift */; };
-		E807ED1384A74AD4AD60DB5C /* ChildProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC5CA473D4417BE1B58D7 /* ChildProfileView.swift */; };
-		6CE5A5B111834A0AB6D1C29C /* DailyDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7F027F89042EFAE82E5A2 /* DailyDiaryView.swift */; };
-		C4AD3015A9484ECA94F62699 /* AddDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EEBC7FF749C2BCC83047 /* AddDiaryEntryView.swift */; };
-		E5E995BFE4EF441FA78AAB97 /* IncidentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C11B0B6A33F4B1BA27095E9 /* IncidentListView.swift */; };
-		423DBC1C51F144CEA15C74E2 /* IncidentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1ED9082458435295E5E57D /* IncidentFormView.swift */; };
-		F7566F70875C44F99FC054E0 /* IncidentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59866137802E4F82AFEA03F6 /* IncidentDetailView.swift */; };
-		E5985F3916D04011B1C118C2 /* NurseryConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D643CCC0B44F58FA6AECB /* NurseryConnectTests.swift */; };
+		AA40000000000000000000AA /* NurseryConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000000000000000000AA /* NurseryConnectApp.swift */; };
+		AA40000100000000000000AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000100000000000000AA /* ContentView.swift */; };
+		AA40000200000000000000AA /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000200000000000000AA /* DataModels.swift */; };
+		AA40000300000000000000AA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000300000000000000AA /* Theme.swift */; };
+		AA40000400000000000000AA /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000400000000000000AA /* SampleData.swift */; };
+		AA40000500000000000000AA /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000500000000000000AA /* RoleSelectionView.swift */; };
+		AA40000600000000000000AA /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000600000000000000AA /* SharedComponents.swift */; };
+		AA40000700000000000000AA /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000700000000000000AA /* MessagingView.swift */; };
+		AA40000800000000000000AA /* KeyworkerDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000800000000000000AA /* KeyworkerDashboardView.swift */; };
+		AA40000900000000000000AA /* KeyworkerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000900000000000000AA /* KeyworkerMainView.swift */; };
+		AA40000A00000000000000AA /* ChildrenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000A00000000000000AA /* ChildrenListView.swift */; };
+		AA40000B00000000000000AA /* ChildProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000B00000000000000AA /* ChildProfileView.swift */; };
+		AA40000C00000000000000AA /* AddChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000C00000000000000AA /* AddChildView.swift */; };
+		AA40000D00000000000000AA /* AddDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000D00000000000000AA /* AddDiaryEntryView.swift */; };
+		AA40000E00000000000000AA /* IncidentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000E00000000000000AA /* IncidentListView.swift */; };
+		AA40000F00000000000000AA /* NewIncidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30000F00000000000000AA /* NewIncidentView.swift */; };
+		AA40001000000000000000AA /* AttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001000000000000000AA /* AttendanceView.swift */; };
+		AA40001100000000000000AA /* MealLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001100000000000000AA /* MealLogView.swift */; };
+		AA40001200000000000000AA /* ParentMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001200000000000000AA /* ParentMainView.swift */; };
+		AA40001300000000000000AA /* ParentDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001300000000000000AA /* ParentDashboardView.swift */; };
+		AA40001400000000000000AA /* ChildDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001400000000000000AA /* ChildDiaryView.swift */; };
+		AA40001500000000000000AA /* GPSTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001500000000000000AA /* GPSTrackingView.swift */; };
+		AA40001600000000000000AA /* ManagerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001600000000000000AA /* ManagerMainView.swift */; };
+		AA40001700000000000000AA /* ManagerDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001700000000000000AA /* ManagerDashboardView.swift */; };
+		AA40001800000000000000AA /* IncidentQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001800000000000000AA /* IncidentQueueView.swift */; };
+		AA40001900000000000000AA /* AttendanceOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001900000000000000AA /* AttendanceOverviewView.swift */; };
+		AA40001A00000000000000AA /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001A00000000000000AA /* ReportsView.swift */; };
+		AA40001B00000000000000AA /* DriverMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001B00000000000000AA /* DriverMainView.swift */; };
+		AA40001C00000000000000AA /* DriverDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001C00000000000000AA /* DriverDashboardView.swift */; };
+		AA40001D00000000000000AA /* DriverManifestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001D00000000000000AA /* DriverManifestView.swift */; };
+		AA40001E00000000000000AA /* CateringMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001E00000000000000AA /* CateringMainView.swift */; };
+		AA40001F00000000000000AA /* CateringDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30001F00000000000000AA /* CateringDashboardView.swift */; };
+		AA40002000000000000000AA /* MealPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002000000000000000AA /* MealPlanView.swift */; };
+		AA40002100000000000000AA /* AllergenAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002100000000000000AA /* AllergenAlertsView.swift */; };
+		AA40002200000000000000AA /* StockManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002200000000000000AA /* StockManagementView.swift */; };
+		AA40002300000000000000AA /* MarketingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002300000000000000AA /* MarketingMainView.swift */; };
+		AA40002400000000000000AA /* MarketingDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002400000000000000AA /* MarketingDashboardView.swift */; };
+		AA40002500000000000000AA /* MediaLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002500000000000000AA /* MediaLibraryView.swift */; };
+		AA40002600000000000000AA /* ContentCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002600000000000000AA /* ContentCalendarView.swift */; };
+		AA40002700000000000000AA /* AdminMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002700000000000000AA /* AdminMainView.swift */; };
+		AA40002800000000000000AA /* AdminDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002800000000000000AA /* AdminDashboardView.swift */; };
+		AA40002900000000000000AA /* AdminChildrenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002900000000000000AA /* AdminChildrenView.swift */; };
+		AA40002A00000000000000AA /* AdminComplianceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002A00000000000000AA /* AdminComplianceView.swift */; };
+		AA40002B00000000000000AA /* RoomLeaderMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002B00000000000000AA /* RoomLeaderMainView.swift */; };
+		AA40002C00000000000000AA /* RoomLeaderDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30002C00000000000000AA /* RoomLeaderDashboardView.swift */; };
+		AA40002D00000000000000AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA30002D00000000000000AA /* Assets.xcassets */; };
+		AA40002E00000000000000AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA30002E00000000000000AA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BB55159D876A48738BFCEB3A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2F06BA55BC64321ADB5081D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B8B3E7C02544440902465D3;
-			remoteInfo = NurseryConnect;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		7E29B58D94804930B61D7C8F /* NurseryConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseryConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACA741BDDF954D4A81F8EC14 /* NurseryConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurseryConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F910A42E0894E828039E98E /* NurseryConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurseryConnectApp.swift; sourceTree = "<group>"; };
-		0BA5AF795D514599B7CA9174 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		70C9F76F8E934771BB2E19ED /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
-		614404505CE54E9694DAC8C3 /* DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
-		2E235133B1A744D7BDC247F0 /* IncidentReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentReport.swift; sourceTree = "<group>"; };
-		A892128C94CF4D7A94920BC4 /* NurseryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurseryTheme.swift; sourceTree = "<group>"; };
-		AFDBF95BC1A84B58B7B95048 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		EC2D5DBC287642F9AB60ADFD /* NurseryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurseryCard.swift; sourceTree = "<group>"; };
-		D528D1BE19D647E0A87767AD /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		FD7E875253E94146BB2F7338 /* ChildCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCardView.swift; sourceTree = "<group>"; };
-		7A8F783B0E0D41A79AE75497 /* ChildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailView.swift; sourceTree = "<group>"; };
-		00EDC5CA473D4417BE1B58D7 /* ChildProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfileView.swift; sourceTree = "<group>"; };
-		80C7F027F89042EFAE82E5A2 /* DailyDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDiaryView.swift; sourceTree = "<group>"; };
-		4A43EEBC7FF749C2BCC83047 /* AddDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryEntryView.swift; sourceTree = "<group>"; };
-		7C11B0B6A33F4B1BA27095E9 /* IncidentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentListView.swift; sourceTree = "<group>"; };
-		1A1ED9082458435295E5E57D /* IncidentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentFormView.swift; sourceTree = "<group>"; };
-		59866137802E4F82AFEA03F6 /* IncidentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailView.swift; sourceTree = "<group>"; };
-		370D643CCC0B44F58FA6AECB /* NurseryConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurseryConnectTests.swift; sourceTree = "<group>"; };
+		AA10000300000000000000AA /* NurseryConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseryConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA30000000000000000000AA /* NurseryConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurseryConnectApp.swift; sourceTree = "<group>"; };
+		AA30000100000000000000AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA30000200000000000000AA /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		AA30000300000000000000AA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AA30000400000000000000AA /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		AA30000500000000000000AA /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		AA30000600000000000000AA /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		AA30000700000000000000AA /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
+		AA30000800000000000000AA /* KeyworkerDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyworkerDashboardView.swift; sourceTree = "<group>"; };
+		AA30000900000000000000AA /* KeyworkerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyworkerMainView.swift; sourceTree = "<group>"; };
+		AA30000A00000000000000AA /* ChildrenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenListView.swift; sourceTree = "<group>"; };
+		AA30000B00000000000000AA /* ChildProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfileView.swift; sourceTree = "<group>"; };
+		AA30000C00000000000000AA /* AddChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildView.swift; sourceTree = "<group>"; };
+		AA30000D00000000000000AA /* AddDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryEntryView.swift; sourceTree = "<group>"; };
+		AA30000E00000000000000AA /* IncidentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentListView.swift; sourceTree = "<group>"; };
+		AA30000F00000000000000AA /* NewIncidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIncidentView.swift; sourceTree = "<group>"; };
+		AA30001000000000000000AA /* AttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
+		AA30001100000000000000AA /* MealLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLogView.swift; sourceTree = "<group>"; };
+		AA30001200000000000000AA /* ParentMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentMainView.swift; sourceTree = "<group>"; };
+		AA30001300000000000000AA /* ParentDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDashboardView.swift; sourceTree = "<group>"; };
+		AA30001400000000000000AA /* ChildDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDiaryView.swift; sourceTree = "<group>"; };
+		AA30001500000000000000AA /* GPSTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSTrackingView.swift; sourceTree = "<group>"; };
+		AA30001600000000000000AA /* ManagerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerMainView.swift; sourceTree = "<group>"; };
+		AA30001700000000000000AA /* ManagerDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerDashboardView.swift; sourceTree = "<group>"; };
+		AA30001800000000000000AA /* IncidentQueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentQueueView.swift; sourceTree = "<group>"; };
+		AA30001900000000000000AA /* AttendanceOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceOverviewView.swift; sourceTree = "<group>"; };
+		AA30001A00000000000000AA /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		AA30001B00000000000000AA /* DriverMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMainView.swift; sourceTree = "<group>"; };
+		AA30001C00000000000000AA /* DriverDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDashboardView.swift; sourceTree = "<group>"; };
+		AA30001D00000000000000AA /* DriverManifestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManifestView.swift; sourceTree = "<group>"; };
+		AA30001E00000000000000AA /* CateringMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateringMainView.swift; sourceTree = "<group>"; };
+		AA30001F00000000000000AA /* CateringDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateringDashboardView.swift; sourceTree = "<group>"; };
+		AA30002000000000000000AA /* MealPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanView.swift; sourceTree = "<group>"; };
+		AA30002100000000000000AA /* AllergenAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenAlertsView.swift; sourceTree = "<group>"; };
+		AA30002200000000000000AA /* StockManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManagementView.swift; sourceTree = "<group>"; };
+		AA30002300000000000000AA /* MarketingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingMainView.swift; sourceTree = "<group>"; };
+		AA30002400000000000000AA /* MarketingDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingDashboardView.swift; sourceTree = "<group>"; };
+		AA30002500000000000000AA /* MediaLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryView.swift; sourceTree = "<group>"; };
+		AA30002600000000000000AA /* ContentCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCalendarView.swift; sourceTree = "<group>"; };
+		AA30002700000000000000AA /* AdminMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainView.swift; sourceTree = "<group>"; };
+		AA30002800000000000000AA /* AdminDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardView.swift; sourceTree = "<group>"; };
+		AA30002900000000000000AA /* AdminChildrenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChildrenView.swift; sourceTree = "<group>"; };
+		AA30002A00000000000000AA /* AdminComplianceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminComplianceView.swift; sourceTree = "<group>"; };
+		AA30002B00000000000000AA /* RoomLeaderMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLeaderMainView.swift; sourceTree = "<group>"; };
+		AA30002C00000000000000AA /* RoomLeaderDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLeaderDashboardView.swift; sourceTree = "<group>"; };
+		AA30002D00000000000000AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA30002E00000000000000AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E22F168605E543C788EFA305 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A12CA412CBE341209E1D93D4 /* Frameworks */ = {
+		AA10000700000000000000AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,263 +118,339 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F8E2016789745C1B981C9FC /* MainGroup */ = {
+		AA10000100000000000000AA /* root */ = {
 			isa = PBXGroup;
 			children = (
-				90F66CD351D84D1C95E11B96 /* NurseryConnect */,
-				4E926119E7994220A1705889 /* NurseryConnectTests */,
-				4D8D794F8F044EDEB9301D76 /* Products */,
+				AA20000000000000000000AA /* NurseryConnect */,
+				AA10000200000000000000AA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4D8D794F8F044EDEB9301D76 /* Products */ = {
+		AA10000200000000000000AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E29B58D94804930B61D7C8F /* NurseryConnect.app */,
-				ACA741BDDF954D4A81F8EC14 /* NurseryConnectTests.xctest */,
+				AA10000300000000000000AA /* NurseryConnect.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90F66CD351D84D1C95E11B96 /* NurseryConnect */ = {
+		AA20000000000000000000AA /* NurseryConnect */ = {
 			isa = PBXGroup;
 			children = (
-				ADB583F7E23C449BA8A012E9 /* Models */,
-				560DAB6A6E32431382A98EF9 /* Utilities */,
-				E6E62835DBE14399B3FD00CA /* Views */,
-				6F910A42E0894E828039E98E /* NurseryConnectApp.swift */,
-				0BA5AF795D514599B7CA9174 /* ContentView.swift */,
+				AA30000000000000000000AA /* NurseryConnectApp.swift */,
+				AA30000100000000000000AA /* ContentView.swift */,
+				AA30002D00000000000000AA /* Assets.xcassets */,
+				AA20000100000000000000AA /* Models */,
+				AA20000200000000000000AA /* Utilities */,
+				AA20000300000000000000AA /* Views */,
+				AA20000D00000000000000AA /* Preview Content */,
 			);
 			path = NurseryConnect;
 			sourceTree = "<group>";
 		};
-		ADB583F7E23C449BA8A012E9 /* Models */ = {
+		AA20000100000000000000AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				70C9F76F8E934771BB2E19ED /* Child.swift */,
-				614404505CE54E9694DAC8C3 /* DiaryEntry.swift */,
-				2E235133B1A744D7BDC247F0 /* IncidentReport.swift */,
+				AA30000200000000000000AA /* DataModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		560DAB6A6E32431382A98EF9 /* Utilities */ = {
+		AA20000200000000000000AA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A892128C94CF4D7A94920BC4 /* NurseryTheme.swift */,
-				AFDBF95BC1A84B58B7B95048 /* SampleData.swift */,
+				AA30000300000000000000AA /* Theme.swift */,
+				AA30000400000000000000AA /* SampleData.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		E6E62835DBE14399B3FD00CA /* Views */ = {
+		AA20000300000000000000AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8AC65A685D74A9B8C426E31 /* Components */,
-				773010FBE01A4335B772097F /* Dashboard */,
-				8B15C0C29E6946B3A6FD6EB6 /* Diary */,
-				69EB4BCFAE724B3DB5FA6714 /* Incidents */,
-				A120AA562657422E8C55A3DB /* Profile */,
+				AA30000500000000000000AA /* RoleSelectionView.swift */,
+				AA20000400000000000000AA /* Shared */,
+				AA20000500000000000000AA /* Keyworker */,
+				AA20000600000000000000AA /* Parent */,
+				AA20000700000000000000AA /* Manager */,
+				AA20000800000000000000AA /* Driver */,
+				AA20000900000000000000AA /* Catering */,
+				AA20000A00000000000000AA /* Marketing */,
+				AA20000B00000000000000AA /* Admin */,
+				AA20000C00000000000000AA /* RoomLeader */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F8AC65A685D74A9B8C426E31 /* Components */ = {
+		AA20000400000000000000AA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				EC2D5DBC287642F9AB60ADFD /* NurseryCard.swift */,
+				AA30000600000000000000AA /* SharedComponents.swift */,
+				AA30000700000000000000AA /* MessagingView.swift */,
 			);
-			path = Components;
+			path = Shared;
 			sourceTree = "<group>";
 		};
-		773010FBE01A4335B772097F /* Dashboard */ = {
+		AA20000500000000000000AA /* Keyworker */ = {
 			isa = PBXGroup;
 			children = (
-				D528D1BE19D647E0A87767AD /* DashboardView.swift */,
-				FD7E875253E94146BB2F7338 /* ChildCardView.swift */,
+				AA30000800000000000000AA /* KeyworkerDashboardView.swift */,
+				AA30000900000000000000AA /* KeyworkerMainView.swift */,
+				AA30000A00000000000000AA /* ChildrenListView.swift */,
+				AA30000B00000000000000AA /* ChildProfileView.swift */,
+				AA30000C00000000000000AA /* AddChildView.swift */,
+				AA30000D00000000000000AA /* AddDiaryEntryView.swift */,
+				AA30000E00000000000000AA /* IncidentListView.swift */,
+				AA30000F00000000000000AA /* NewIncidentView.swift */,
+				AA30001000000000000000AA /* AttendanceView.swift */,
+				AA30001100000000000000AA /* MealLogView.swift */,
 			);
-			path = Dashboard;
+			path = Keyworker;
 			sourceTree = "<group>";
 		};
-		8B15C0C29E6946B3A6FD6EB6 /* Diary */ = {
+		AA20000600000000000000AA /* Parent */ = {
 			isa = PBXGroup;
 			children = (
-				80C7F027F89042EFAE82E5A2 /* DailyDiaryView.swift */,
-				4A43EEBC7FF749C2BCC83047 /* AddDiaryEntryView.swift */,
+				AA30001200000000000000AA /* ParentMainView.swift */,
+				AA30001300000000000000AA /* ParentDashboardView.swift */,
+				AA30001400000000000000AA /* ChildDiaryView.swift */,
+				AA30001500000000000000AA /* GPSTrackingView.swift */,
 			);
-			path = Diary;
+			path = Parent;
 			sourceTree = "<group>";
 		};
-		69EB4BCFAE724B3DB5FA6714 /* Incidents */ = {
+		AA20000700000000000000AA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				7C11B0B6A33F4B1BA27095E9 /* IncidentListView.swift */,
-				1A1ED9082458435295E5E57D /* IncidentFormView.swift */,
-				59866137802E4F82AFEA03F6 /* IncidentDetailView.swift */,
+				AA30001600000000000000AA /* ManagerMainView.swift */,
+				AA30001700000000000000AA /* ManagerDashboardView.swift */,
+				AA30001800000000000000AA /* IncidentQueueView.swift */,
+				AA30001900000000000000AA /* AttendanceOverviewView.swift */,
+				AA30001A00000000000000AA /* ReportsView.swift */,
 			);
-			path = Incidents;
+			path = Manager;
 			sourceTree = "<group>";
 		};
-		A120AA562657422E8C55A3DB /* Profile */ = {
+		AA20000800000000000000AA /* Driver */ = {
 			isa = PBXGroup;
 			children = (
-				7A8F783B0E0D41A79AE75497 /* ChildDetailView.swift */,
-				00EDC5CA473D4417BE1B58D7 /* ChildProfileView.swift */,
+				AA30001B00000000000000AA /* DriverMainView.swift */,
+				AA30001C00000000000000AA /* DriverDashboardView.swift */,
+				AA30001D00000000000000AA /* DriverManifestView.swift */,
 			);
-			path = Profile;
+			path = Driver;
 			sourceTree = "<group>";
 		};
-		4E926119E7994220A1705889 /* NurseryConnectTests */ = {
+		AA20000900000000000000AA /* Catering */ = {
 			isa = PBXGroup;
 			children = (
-				370D643CCC0B44F58FA6AECB /* NurseryConnectTests.swift */,
+				AA30001E00000000000000AA /* CateringMainView.swift */,
+				AA30001F00000000000000AA /* CateringDashboardView.swift */,
+				AA30002000000000000000AA /* MealPlanView.swift */,
+				AA30002100000000000000AA /* AllergenAlertsView.swift */,
+				AA30002200000000000000AA /* StockManagementView.swift */,
 			);
-			path = NurseryConnectTests;
+			path = Catering;
+			sourceTree = "<group>";
+		};
+		AA20000A00000000000000AA /* Marketing */ = {
+			isa = PBXGroup;
+			children = (
+				AA30002300000000000000AA /* MarketingMainView.swift */,
+				AA30002400000000000000AA /* MarketingDashboardView.swift */,
+				AA30002500000000000000AA /* MediaLibraryView.swift */,
+				AA30002600000000000000AA /* ContentCalendarView.swift */,
+			);
+			path = Marketing;
+			sourceTree = "<group>";
+		};
+		AA20000B00000000000000AA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				AA30002700000000000000AA /* AdminMainView.swift */,
+				AA30002800000000000000AA /* AdminDashboardView.swift */,
+				AA30002900000000000000AA /* AdminChildrenView.swift */,
+				AA30002A00000000000000AA /* AdminComplianceView.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		AA20000C00000000000000AA /* RoomLeader */ = {
+			isa = PBXGroup;
+			children = (
+				AA30002B00000000000000AA /* RoomLeaderMainView.swift */,
+				AA30002C00000000000000AA /* RoomLeaderDashboardView.swift */,
+			);
+			path = RoomLeader;
+			sourceTree = "<group>";
+		};
+		AA20000D00000000000000AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA30002E00000000000000AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5B8B3E7C02544440902465D3 /* NurseryConnect */ = {
+		AA10000400000000000000AA /* NurseryConnect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74F6C8D80F6442AF8DB64453 /* Build configuration list for PBXNativeTarget "NurseryConnect" */;
+			buildConfigurationList = AA10000D00000000000000AA /* Build configuration list for PBXNativeTarget "NurseryConnect" */;
 			buildPhases = (
-				B766045D8D934114A7BF285E /* Sources */,
-				E22F168605E543C788EFA305 /* Frameworks */,
-				5CC3BA4AABA841409B6B75AA /* Resources */,
+				AA10000500000000000000AA /* Sources */,
+				AA10000600000000000000AA /* Resources */,
+				AA10000700000000000000AA /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NurseryConnect;
-			packageProductDependencies = (
-			);
 			productName = NurseryConnect;
-			productReference = 7E29B58D94804930B61D7C8F /* NurseryConnect.app */;
+			productReference = AA10000300000000000000AA /* NurseryConnect.app */;
 			productType = "com.apple.product-type.application";
-		};
-		349FCCD4794945D39283A9A5 /* NurseryConnectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8100145CFD6249AD9B856AA1 /* Build configuration list for PBXNativeTarget "NurseryConnectTests" */;
-			buildPhases = (
-				ACC6A675A7864413944BE27C /* Sources */,
-				A12CA412CBE341209E1D93D4 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F1A67D3FA7724DFF9A95D34A /* PBXTargetDependency */,
-			);
-			name = NurseryConnectTests;
-			productName = NurseryConnectTests;
-			productReference = ACA741BDDF954D4A81F8EC14 /* NurseryConnectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B2F06BA55BC64321ADB5081D /* Project object */ = {
+		AA10000000000000000000AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					5B8B3E7C02544440902465D3 = {
-						CreatedOnToolsVersion = 15.4;
-					};
-					349FCCD4794945D39283A9A5 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 5B8B3E7C02544440902465D3;
+					AA10000400000000000000AA = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = E74E7758273C43D1B8F2D1BC /* Build configuration list for PBXProject "NurseryConnect" */;
-			compatibilityVersion = "Xcode 15.0";
+			buildConfigurationList = AA10000C00000000000000AA /* Build configuration list for PBXProject "NurseryConnect" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1F8E2016789745C1B981C9FC;
-			productRefGroup = 4D8D794F8F044EDEB9301D76 /* Products */;
+			mainGroup = AA10000100000000000000AA;
+			productRefGroup = AA10000200000000000000AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B8B3E7C02544440902465D3 /* NurseryConnect */,
-				349FCCD4794945D39283A9A5 /* NurseryConnectTests */,
+				AA10000400000000000000AA /* NurseryConnect */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5CC3BA4AABA841409B6B75AA /* Resources */ = {
+		AA10000600000000000000AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA40002D00000000000000AA /* Assets.xcassets in Resources */,
+				AA40002E00000000000000AA /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B766045D8D934114A7BF285E /* Sources */ = {
+		AA10000500000000000000AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B56342145E640EABED1D68B /* NurseryConnectApp.swift in Sources */,
-				8D21060FBA134B28BDD8AB5D /* ContentView.swift in Sources */,
-				77088558EC1847659BB62E94 /* Child.swift in Sources */,
-				27EC0CB0AD7041A894FA1B2F /* DiaryEntry.swift in Sources */,
-				E722F06876364F84A7CFBA32 /* IncidentReport.swift in Sources */,
-				F993E2B7EB334A74928AF299 /* NurseryTheme.swift in Sources */,
-				99C8455A8FEB466D9CC67185 /* SampleData.swift in Sources */,
-				86572A05F3E042DA9ACDD284 /* NurseryCard.swift in Sources */,
-				13CC1D9AAC2745A0BE20B54D /* DashboardView.swift in Sources */,
-				239BF378788946398C0FF2B2 /* ChildCardView.swift in Sources */,
-				6A31FD50C110479D908EBC4B /* ChildDetailView.swift in Sources */,
-				E807ED1384A74AD4AD60DB5C /* ChildProfileView.swift in Sources */,
-				6CE5A5B111834A0AB6D1C29C /* DailyDiaryView.swift in Sources */,
-				C4AD3015A9484ECA94F62699 /* AddDiaryEntryView.swift in Sources */,
-				E5E995BFE4EF441FA78AAB97 /* IncidentListView.swift in Sources */,
-				423DBC1C51F144CEA15C74E2 /* IncidentFormView.swift in Sources */,
-				F7566F70875C44F99FC054E0 /* IncidentDetailView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC6A675A7864413944BE27C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5985F3916D04011B1C118C2 /* NurseryConnectTests.swift in Sources */,
+				AA40000000000000000000AA /* NurseryConnectApp.swift in Sources */,
+				AA40000100000000000000AA /* ContentView.swift in Sources */,
+				AA40000200000000000000AA /* DataModels.swift in Sources */,
+				AA40000300000000000000AA /* Theme.swift in Sources */,
+				AA40000400000000000000AA /* SampleData.swift in Sources */,
+				AA40000500000000000000AA /* RoleSelectionView.swift in Sources */,
+				AA40000600000000000000AA /* SharedComponents.swift in Sources */,
+				AA40000700000000000000AA /* MessagingView.swift in Sources */,
+				AA40000800000000000000AA /* KeyworkerDashboardView.swift in Sources */,
+				AA40000900000000000000AA /* KeyworkerMainView.swift in Sources */,
+				AA40000A00000000000000AA /* ChildrenListView.swift in Sources */,
+				AA40000B00000000000000AA /* ChildProfileView.swift in Sources */,
+				AA40000C00000000000000AA /* AddChildView.swift in Sources */,
+				AA40000D00000000000000AA /* AddDiaryEntryView.swift in Sources */,
+				AA40000E00000000000000AA /* IncidentListView.swift in Sources */,
+				AA40000F00000000000000AA /* NewIncidentView.swift in Sources */,
+				AA40001000000000000000AA /* AttendanceView.swift in Sources */,
+				AA40001100000000000000AA /* MealLogView.swift in Sources */,
+				AA40001200000000000000AA /* ParentMainView.swift in Sources */,
+				AA40001300000000000000AA /* ParentDashboardView.swift in Sources */,
+				AA40001400000000000000AA /* ChildDiaryView.swift in Sources */,
+				AA40001500000000000000AA /* GPSTrackingView.swift in Sources */,
+				AA40001600000000000000AA /* ManagerMainView.swift in Sources */,
+				AA40001700000000000000AA /* ManagerDashboardView.swift in Sources */,
+				AA40001800000000000000AA /* IncidentQueueView.swift in Sources */,
+				AA40001900000000000000AA /* AttendanceOverviewView.swift in Sources */,
+				AA40001A00000000000000AA /* ReportsView.swift in Sources */,
+				AA40001B00000000000000AA /* DriverMainView.swift in Sources */,
+				AA40001C00000000000000AA /* DriverDashboardView.swift in Sources */,
+				AA40001D00000000000000AA /* DriverManifestView.swift in Sources */,
+				AA40001E00000000000000AA /* CateringMainView.swift in Sources */,
+				AA40001F00000000000000AA /* CateringDashboardView.swift in Sources */,
+				AA40002000000000000000AA /* MealPlanView.swift in Sources */,
+				AA40002100000000000000AA /* AllergenAlertsView.swift in Sources */,
+				AA40002200000000000000AA /* StockManagementView.swift in Sources */,
+				AA40002300000000000000AA /* MarketingMainView.swift in Sources */,
+				AA40002400000000000000AA /* MarketingDashboardView.swift in Sources */,
+				AA40002500000000000000AA /* MediaLibraryView.swift in Sources */,
+				AA40002600000000000000AA /* ContentCalendarView.swift in Sources */,
+				AA40002700000000000000AA /* AdminMainView.swift in Sources */,
+				AA40002800000000000000AA /* AdminDashboardView.swift in Sources */,
+				AA40002900000000000000AA /* AdminChildrenView.swift in Sources */,
+				AA40002A00000000000000AA /* AdminComplianceView.swift in Sources */,
+				AA40002B00000000000000AA /* RoomLeaderMainView.swift in Sources */,
+				AA40002C00000000000000AA /* RoomLeaderDashboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F1A67D3FA7724DFF9A95D34A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B8B3E7C02544440902465D3 /* NurseryConnect */;
-			targetProxy = BB55159D876A48738BFCEB3A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		59B5988A174D4CA594352356 /* Debug */ = {
+		AA10000800000000000000AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_CYCLE = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -343,6 +459,12 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -353,22 +475,53 @@
 			};
 			name = Debug;
 		};
-		613F6B6199B2460FB55BB5B5 /* Release */ = {
+		AA10000900000000000000AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_CYCLE = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -377,132 +530,88 @@
 			};
 			name = Release;
 		};
-		CF7DE18DD9EB44ECADD85AEF /* Debug */ = {
+		AA10000A00000000000000AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSTECATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSTECATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"NurseryConnect/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NurseryConnect uses your location to track the transport run for child safety.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LE_SWIFT_VERSION = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nurseryconnect.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9971B8C5F89A41028628C236 /* Release */ = {
+		AA10000B00000000000000AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSTECATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSTECATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"NurseryConnect/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NurseryConnect uses your location to track the transport run for child safety.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LE_SWIFT_VERSION = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nurseryconnect.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2787A71A63204AAB94E95E13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nurseryconnect.app.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NurseryConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NurseryConnect";
-			};
-			name = Debug;
-		};
-		9BE1B6487477481AB17A7582 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nurseryconnect.app.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NurseryConnect.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NurseryConnect";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E74E7758273C43D1B8F2D1BC /* Build configuration list for PBXProject "NurseryConnect" */ = {
+		AA10000C00000000000000AA /* Build configuration list for PBXProject "NurseryConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B5988A174D4CA594352356 /* Debug */,
-				613F6B6199B2460FB55BB5B5 /* Release */,
+				AA10000800000000000000AA /* Debug */,
+				AA10000900000000000000AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74F6C8D80F6442AF8DB64453 /* Build configuration list for PBXNativeTarget "NurseryConnect" */ = {
+		AA10000D00000000000000AA /* Build configuration list for PBXNativeTarget "NurseryConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF7DE18DD9EB44ECADD85AEF /* Debug */,
-				9971B8C5F89A41028628C236 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8100145CFD6249AD9B856AA1 /* Build configuration list for PBXNativeTarget "NurseryConnectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2787A71A63204AAB94E95E13 /* Debug */,
-				9BE1B6487477481AB17A7582 /* Release */,
+				AA10000A00000000000000AA /* Debug */,
+				AA10000B00000000000000AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
-	rootObject = B2F06BA55BC64321ADB5081D /* Project object */;
+	rootObject = AA10000000000000000000AA /* Project object */;
 }

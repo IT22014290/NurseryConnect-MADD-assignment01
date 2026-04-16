@@ -1,200 +1,195 @@
 import Foundation
 import SwiftData
 
-// MARK: - Sample Data
-// Realistic demo data for testing and presentation purposes.
-
-struct SampleData {
+enum SampleData {
 
     static func populate(context: ModelContext) {
-        // Only insert if no children exist yet
-        let descriptor = FetchDescriptor<Child>()
-        let existing = (try? context.fetch(descriptor)) ?? []
-        guard existing.isEmpty else { return }
+        let cal = Calendar.current
+        func dob(years: Int, months: Int = 0) -> Date {
+            cal.date(byAdding: .month, value: -(years * 12 + months), to: Date()) ?? Date()
+        }
 
-        let children = makeSampleChildren()
-        children.forEach { context.insert($0) }
+        // MARK: - Children
+        let c0 = buildChild("Olivia Bennett",   dob: dob(years: 3, months: 4),  kw: "Sarah Johnson",  room: "Sunshine Room",  parent1: "Emma Bennett",   phone1: "07700900001", diet: "",                      allergens: "")
+        let c1 = buildChild("Noah Williams",    dob: dob(years: 2, months: 1),  kw: "Sarah Johnson",  room: "Sunshine Room",  parent1: "Claire Williams", phone1: "07700900002", diet: "Vegetarian",            allergens: "Milk,Eggs")
+        let c2 = buildChild("Isla Thompson",    dob: dob(years: 4, months: 0),  kw: "James Carter",   room: "Rainbow Room",   parent1: "Fiona Thompson",  phone1: "07700900003", diet: "Gluten-Free",           allergens: "Gluten")
+        let c3 = buildChild("Ethan Harris",     dob: dob(years: 1, months: 8),  kw: "Sarah Johnson",  room: "Sunshine Room",  parent1: "Rachel Harris",   phone1: "07700900004", diet: "",                      allergens: "Peanuts")
+        let c4 = buildChild("Amelia Clarke",    dob: dob(years: 3, months: 6),  kw: "James Carter",   room: "Rainbow Room",   parent1: "Helen Clarke",    phone1: "07700900005", diet: "Halal",                 allergens: "")
+        let c5 = buildChild("Liam Patel",       dob: dob(years: 2, months: 9),  kw: "Priya Singh",    room: "Starlight Room", parent1: "Anita Patel",     phone1: "07700900006", diet: "Vegetarian,Halal",      allergens: "Nuts,Sesame")
+        let c6 = buildChild("Sophia Davis",     dob: dob(years: 4, months: 2),  kw: "Priya Singh",    room: "Starlight Room", parent1: "Kate Davis",      phone1: "07700900007", diet: "",                      allergens: "")
+        let c7 = buildChild("Jack Robinson",    dob: dob(years: 0, months: 14), kw: "James Carter",   room: "Rainbow Room",   parent1: "Lucy Robinson",   phone1: "07700900008", diet: "",                      allergens: "")
 
-        // Add diary entries for each child
-        addDiaryEntries(for: children[0])
-        addDiaryEntries(for: children[1])
+        let children = [c0, c1, c2, c3, c4, c5, c6, c7]
+        for c in children { context.insert(c) }
 
-        // Add incident report
-        let incident = IncidentReport(
-            category: .minorAccident,
-            location: "Outdoor Play Area",
-            incidentDescription: "Oliver tripped on uneven paving and grazed his right knee. No bleeding, surface graze only.",
-            actionTaken: "Area cleaned with antiseptic wipe. Comfort provided. Child settled quickly and resumed play."
-        )
-        incident.child = children[0]
-        incident.status = .pendingReview
-        incident.bodyMapLocation = .rightLeg
-        incident.submittedAt = Date().addingTimeInterval(-3600)
-        incident.witnesses = ["Emma Clarke", "Tom Bennett"]
-        context.insert(incident)
+        // Check in
+        c0.isCheckedIn = true; c0.checkInTime = cal.date(bySettingHour: 8,  minute: 15, second: 0, of: Date()); c0.checkInBy = "Emma Bennett"
+        c1.isCheckedIn = true; c1.checkInTime = cal.date(bySettingHour: 8,  minute: 30, second: 0, of: Date()); c1.checkInBy = "Claire Williams"
+        c2.isCheckedIn = true; c2.checkInTime = cal.date(bySettingHour: 9,  minute: 0,  second: 0, of: Date()); c2.checkInBy = "Fiona Thompson"
+        c4.isCheckedIn = true; c4.checkInTime = cal.date(bySettingHour: 8,  minute: 45, second: 0, of: Date()); c4.checkInBy = "Helen Clarke"
+        c5.isCheckedIn = true; c5.checkInTime = cal.date(bySettingHour: 9,  minute: 10, second: 0, of: Date()); c5.checkInBy = "Anita Patel"
 
-        // Add a second incident (already acknowledged)
-        let incident2 = IncidentReport(
-            category: .nearMiss,
-            location: "Craft Room",
-            incidentDescription: "Amara reached for scissors that were left within reach on the table. No injury occurred.",
-            actionTaken: "Scissors secured in designated locked storage. All staff reminded of tool safety protocol."
-        )
-        incident2.child = children[1]
-        incident2.status = .acknowledged
-        incident2.submittedAt = Date().addingTimeInterval(-86400)
-        incident2.managerSignedAt = Date().addingTimeInterval(-82800)
-        incident2.parentNotifiedAt = Date().addingTimeInterval(-79200)
-        incident2.parentAcknowledgedAt = Date().addingTimeInterval(-75600)
-        incident2.managerName = "Jennifer Walters"
-        context.insert(incident2)
+        c1.allergenSeverity = "intolerance"
+        c3.allergenSeverity = "anaphylactic"
+        c5.allergenSeverity = "allergy"
+
+        c2.isTransportChild = true; c2.school = "St. Mary's Primary"
+        c5.isTransportChild = true; c5.school = "Hillside Academy"
+
+        // MARK: - Diary Entries
+        let diaryData: [(Child, String, String, String, Double)] = [
+            (c0, "checkin",   "Arrived happy and settled. Dropped off by mum Emma.",                          "Sarah Johnson", 8.0),
+            (c0, "wellbeing", "Happy and engaged on arrival. Mood: Happy.",                                    "Sarah Johnson", 7.5),
+            (c0, "activity",  "Outdoor play – sandbox and climbing frame. Loved the slide!",                   "Sarah Johnson", 6.0),
+            (c0, "meal",      "Breakfast: Porridge with banana. Ate most of portion.",                         "Sarah Johnson", 5.5),
+            (c0, "sleep",     "Nap – settled quickly. Position: back.",                                        "Sarah Johnson", 3.0),
+            (c0, "milestone", "EYFS Communication: Olivia counted to 10 independently during play!",           "Sarah Johnson", 1.5),
+            (c1, "checkin",   "Arrived cheerful. Dropped off by mum Claire.",                                  "Sarah Johnson", 7.5),
+            (c1, "meal",      "Lunch: Vegetarian pasta. Ate all. Dairy-free milk 180ml.",                      "Sarah Johnson", 4.0),
+            (c1, "nappy",     "Wet nappy – cream applied.",                                                    "Sarah Johnson", 2.0),
+            (c2, "checkin",   "Arrived with dad. Happy mood.",                                                 "James Carter",  7.0),
+            (c2, "activity",  "Arts & crafts – finger painting. EYFS Expressive Arts.",                        "James Carter",  5.0),
+        ]
+
+        for item in diaryData {
+            let e = DiaryEntry(childId: item.0.id, childName: item.0.fullName,
+                               entryType: item.1, description: item.2, keyworkerName: item.3)
+            e.timestamp = Date().addingTimeInterval(-item.4 * 3600)
+            if item.1 == "meal"  { e.mealType = "lunch"; e.foodConsumed = "most"; e.fluidType = "water"; e.fluidAmount = 150 }
+            if item.1 == "sleep" { e.sleepPosition = "back"; e.sleepStart = Date().addingTimeInterval(-item.4 * 3600); e.sleepEnd = Date().addingTimeInterval(-(item.4 - 1.5) * 3600) }
+            if item.1 == "nappy" { e.nappyType = "wet"; e.creamApplied = true }
+            context.insert(e)
+        }
+
+        // MARK: - Incidents
+        let inc1 = IncidentReport(childId: c0.id, childName: c0.fullName, reportedBy: "Sarah Johnson",
+                                   category: "minor_accident",
+                                   description: "Olivia slipped near the sink and grazed her right knee. No bleeding – cleaned and plaster applied.")
+        inc1.location = "Bathroom"
+        inc1.immediateAction = "Wound cleaned with antiseptic wipe. Small plaster applied. Child settled and resumed play."
+        inc1.witnesses = "James Carter"
+        inc1.status = "pending"
+        inc1.injuryBodyLocation = "Right knee"
+        context.insert(inc1)
+
+        let inc2 = IncidentReport(childId: c1.id, childName: c1.fullName, reportedBy: "Sarah Johnson",
+                                   category: "minor_accident",
+                                   description: "Noah bumped his forehead on the table corner. Small red mark – no loss of consciousness.")
+        inc2.location = "Dining Area"
+        inc2.immediateAction = "Cold compress applied for 10 minutes. Child monitored for 30 minutes."
+        inc2.witnesses = "Priya Singh"
+        inc2.status = "reviewed"
+        inc2.managerName = "Mrs. Karen White"
+        inc2.managerReviewDate = Date().addingTimeInterval(-3600)
+        inc2.parentNotified = true
+        inc2.parentNotifiedTime = Date().addingTimeInterval(-3000)
+        inc2.injuryBodyLocation = "Forehead"
+        context.insert(inc2)
+
+        // MARK: - Meal Plan
+        let monday = currentWeekMonday()
+        let mealPlanData: [(Int, String, String, String)] = [
+            (0, "breakfast",       "Porridge with banana",                    "Milk,Gluten"),
+            (0, "morning_snack",   "Apple slices & water",                    ""),
+            (0, "lunch",           "Chicken with roast vegetables",           ""),
+            (0, "afternoon_snack", "Yoghurt with berries",                    "Milk"),
+            (1, "breakfast",       "Wholegrain toast with baked beans",       "Gluten"),
+            (1, "morning_snack",   "Breadsticks & hummus",                    "Gluten,Sesame"),
+            (1, "lunch",           "Pasta bolognese",                         "Gluten,Milk"),
+            (1, "afternoon_snack", "Cucumber & cream cheese",                 "Milk"),
+            (2, "breakfast",       "Weetabix with milk",                      "Gluten,Milk"),
+            (2, "morning_snack",   "Pear slices",                             ""),
+            (2, "lunch",           "Salmon fishcakes with peas",              "Fish,Gluten,Eggs"),
+            (2, "afternoon_snack", "Melon chunks",                            ""),
+            (3, "breakfast",       "Scrambled egg on toast",                  "Eggs,Gluten"),
+            (3, "morning_snack",   "Rice cakes",                              "Gluten"),
+            (3, "lunch",           "Beef stew with mashed potato",            ""),
+            (3, "afternoon_snack", "Cheese & crackers",                       "Milk,Gluten"),
+            (4, "breakfast",       "Muesli",                                  "Gluten,Milk,Nuts"),
+            (4, "morning_snack",   "Carrot sticks",                           ""),
+            (4, "lunch",           "Cheese & vegetable quesadilla",           "Milk,Gluten"),
+            (4, "afternoon_snack", "Banana with milk",                        "Milk"),
+        ]
+        for item in mealPlanData {
+            let m = MealPlanItem(weekStartDate: monday, dayOfWeek: item.0, mealType: item.1, foodItem: item.2, allergens: item.3)
+            context.insert(m)
+        }
+
+        // MARK: - Stock
+        let stockData: [(String, String, Double, Double, String)] = [
+            ("Whole Milk",          "Dairy",   5,  10, "litres"),
+            ("Eggs (Free Range)",   "Protein", 24, 12, "units"),
+            ("Wholegrain Bread",    "Grains",  3,  4,  "loaves"),
+            ("Baby Porridge",       "Grains",  2,  3,  "kg"),
+            ("Salmon (Fresh)",      "Fish",    1,  2,  "kg"),
+            ("Chicken Breast",      "Protein", 3,  2,  "kg"),
+            ("Mixed Vegetables",    "Produce", 4,  3,  "kg"),
+            ("Pasta (Wholegrain)",  "Grains",  2,  2,  "kg"),
+        ]
+        for s in stockData {
+            let item = StockItem(name: s.0, category: s.1, currentLevel: s.2, minimumLevel: s.3, unit: s.4)
+            context.insert(item)
+        }
+
+        // MARK: - Messages
+        let msg1 = Message(senderName: "Emma Bennett", senderRole: "Parent",
+                           recipientName: "Sarah Johnson", recipientRole: "Keyworker",
+                           content: "Hi Sarah, Olivia had a slight runny nose this morning. She had Calpol before coming in – could you keep an eye on her please?",
+                           childName: "Olivia Bennett")
+        let msg2 = Message(senderName: "Sarah Johnson", senderRole: "Keyworker",
+                           recipientName: "Emma Bennett", recipientRole: "Parent",
+                           content: "Thanks Emma. Olivia is happy and settled. Will monitor and update you if anything changes.",
+                           childName: "Olivia Bennett")
+        let msg3 = Message(senderName: "Mrs. Karen White", senderRole: "Setting Manager",
+                           recipientName: "All Staff", recipientRole: "Keyworker",
+                           content: "Reminder: Please ensure all diary entries are completed before 4pm handover. Ofsted visit scheduled for Thursday – keep records up to date.")
+        msg2.isRead = true
+        msg3.isRead = false
+        context.insert(msg1); context.insert(msg2); context.insert(msg3)
+
+        // MARK: - Transport Run
+        let run = TransportRun(driverName: "Mike Stevens", children: ["Isla Thompson", "Liam Patel"])
+        run.estimatedArrival = "3:45 PM"
+        context.insert(run)
+
+        // MARK: - Media Photos
+        let photoData: [(String, String, String)] = [
+            ("Outdoor Play",   "Children enjoying the sunshine in our garden",          "Sarah Johnson"),
+            ("Arts & Crafts",  "Creative afternoon – wonderful artwork from our children", "James Carter"),
+            ("Story Time",     "Afternoon story time – so engaged!",                      "Priya Singh"),
+            ("Music Session",  "Exploring sounds and rhythms today",                      "Sarah Johnson"),
+        ]
+        for (tag, cap, kw) in photoData {
+            let p = MediaPhoto(activityTag: tag, caption: cap, keyworkerName: kw)
+            context.insert(p)
+        }
 
         try? context.save()
     }
 
-    // MARK: - Private helpers
+    // MARK: - Builder helpers
 
-    private static func makeSampleChildren() -> [Child] {
-        let calendar = Calendar.current
-
-        let oliver = Child(
-            firstName: "Oliver",
-            lastName: "Thompson",
-            preferredName: "Ollie",
-            dateOfBirth: calendar.date(byAdding: .year, value: -3, to: Date())!,
-            room: "Sunshine Room",
-            keyworkerName: "Sarah Mitchell",
-            photoConsent: true,
-            allergies: ["Peanuts", "Tree Nuts"],
-            dietaryRequirements: "No nuts. Check all labels.",
-            medicalConditions: "Mild eczema — use prescribed cream during nappy changes.",
-            avatarColorHex: "3182CE"
-        )
-
-        let amara = Child(
-            firstName: "Amara",
-            lastName: "Osei",
-            preferredName: "Amara",
-            dateOfBirth: calendar.date(byAdding: .month, value: -22, to: Date())!,
-            room: "Rainbow Room",
-            keyworkerName: "Sarah Mitchell",
-            photoConsent: true,
-            allergies: [],
-            dietaryRequirements: "Vegetarian",
-            medicalConditions: "None",
-            avatarColorHex: "D53F8C"
-        )
-
-        let jack = Child(
-            firstName: "Jack",
-            lastName: "Williams",
-            preferredName: "Jack",
-            dateOfBirth: calendar.date(byAdding: .year, value: -4, to: Date())!,
-            room: "Sunshine Room",
-            keyworkerName: "Sarah Mitchell",
-            photoConsent: false,   // No photo consent — visible red flag
-            allergies: ["Eggs", "Dairy"],
-            dietaryRequirements: "Dairy-free and egg-free. Full-fat alternatives required.",
-            medicalConditions: "Asthma — blue inhaler kept in medical cabinet.",
-            avatarColorHex: "805AD5"
-        )
-
-        return [oliver, amara, jack]
+    private static func buildChild(_ name: String, dob: Date, kw: String, room: String,
+                                    parent1: String, phone1: String, diet: String, allergens: String) -> Child {
+        let c = Child(fullName: name, dateOfBirth: dob, keyworkerName: kw, room: room)
+        c.parentOneName  = parent1
+        c.parentOnePhone = phone1
+        c.parentOneEmail = parent1.lowercased().replacingOccurrences(of: " ", with: ".") + "@email.com"
+        c.dietaryRequirements = diet
+        c.allergenList   = allergens
+        c.authorisedCollectors = "\(parent1) (Parent)"
+        c.address        = "123 Sample Street, London, UK"
+        c.photographyConsent      = true
+        c.socialMediaConsent      = allergens.isEmpty
+        c.dataProcessingConsent   = true
+        c.medicalTreatmentConsent = true
+        c.gpsConsent = true
+        return c
     }
 
-    private static func addDiaryEntries(for child: Child) {
-        let now = Date()
-        let calendar = Calendar.current
-
-        // Check-in
-        let checkIn = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 8, minute: 15, second: 0, of: now)!,
-            entryType: .checkIn,
-            notes: "Arrived happy, gave Mum a big wave goodbye."
-        )
-        checkIn.moodRating = .happy
-        checkIn.collectedBy = child.firstName == "Oliver" ? "Sophie Thompson (Mum)" : "David Osei (Dad)"
-        checkIn.child = child
-
-        // Wellbeing on arrival
-        let wellbeing1 = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 8, minute: 20, second: 0, of: now)!,
-            entryType: .wellbeing
-        )
-        wellbeing1.moodRating = .happy
-        wellbeing1.wellbeingNotes = "Settled immediately, went straight to the book corner."
-        wellbeing1.child = child
-
-        // Activity
-        let activity = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 9, minute: 30, second: 0, of: now)!,
-            entryType: .activity
-        )
-        activity.activityTitle = "Outdoor Sand & Water Play"
-        activity.eyfsArea = .physical
-        activity.notes = "Fantastic engagement with the sand tray. Experimented with filling and emptying containers."
-        activity.child = child
-
-        // Snack
-        let snack = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 10, minute: 0, second: 0, of: now)!,
-            entryType: .meal
-        )
-        snack.mealType = "Morning Snack"
-        snack.foodOffered = "Apple slices, water"
-        snack.foodConsumed = .all
-        snack.fluidType = "Water"
-        snack.fluidAmountMl = 120
-        snack.child = child
-
-        // Nappy (for younger child)
-        if child.firstName == "Amara" {
-            let nappy = DiaryEntry(
-                timestamp: calendar.date(bySettingHour: 10, minute: 30, second: 0, of: now)!,
-                entryType: .nappy
-            )
-            nappy.nappyType = "Wet"
-            nappy.creamApplied = true
-            nappy.nappyConcerns = ""
-            nappy.child = child
-        }
-
-        // Sleep
-        let sleep = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 12, minute: 30, second: 0, of: now)!,
-            entryType: .sleep
-        )
-        sleep.sleepStartTime = calendar.date(bySettingHour: 12, minute: 30, second: 0, of: now)
-        sleep.sleepEndTime = calendar.date(bySettingHour: 14, minute: 0, second: 0, of: now)
-        sleep.sleepPosition = "Back"
-        sleep.notes = "Settled well, uninterrupted nap."
-        sleep.child = child
-
-        // Lunch
-        let lunch = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 11, minute: 45, second: 0, of: now)!,
-            entryType: .meal
-        )
-        lunch.mealType = "Lunch"
-        lunch.foodOffered = child.firstName == "Amara" ? "Vegetable pasta, fruit salad" : "Chicken with roasted vegetables, pear"
-        lunch.foodConsumed = .most
-        lunch.fluidType = "Water"
-        lunch.fluidAmountMl = 180
-        lunch.child = child
-
-        // Milestone
-        let milestone = DiaryEntry(
-            timestamp: calendar.date(bySettingHour: 15, minute: 0, second: 0, of: now)!,
-            entryType: .milestone
-        )
-        milestone.milestoneTitle = child.firstName == "Oliver"
-            ? "Counted objects to 10 independently"
-            : "First independent steps across the room — 6 steps!"
-        milestone.milestoneEYFSArea = child.firstName == "Oliver" ? .mathematics : .physical
-        milestone.milestoneNextSteps = child.firstName == "Oliver"
-            ? "Introduce counting beyond 10 using number cards."
-            : "Encourage furniture cruising and supported walking outdoors."
-        milestone.notes = "Wonderful moment — capturing for learning journal."
-        milestone.child = child
+    private static func currentWeekMonday() -> Date {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        return cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date())) ?? Date()
     }
 }
